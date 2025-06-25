@@ -1,42 +1,34 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LeftSidebar from './components/layout/LeftSidebar';
+import MusicPlayerBar from './components/layout/MusicPlayerBar';
+import Header from './components/layout/Header';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import PlaylistPage from './pages/PlaylistPage';
+import ArtistPage from './pages/ArtistPage';
+import LibraryPage from './pages/LibraryPage';
 
-
-import ArtistPage from "./pages/ArtistPage";
-import HomePage from "./pages/HomePage";
-import LibraryPage from "./pages/LibraryPage";
-import PlaylistPage from "./pages/PlaylistPage";
-import SearchPage from "./pages/SearchPage";
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
-
-
-const App = () => (
-<QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-    <Toaster />
-    <Sonner />
-    <BrowserRouter>
-        <Routes>
-
-
-          <Route path="/" element={<HomePage />} />
-          <Route path="/artist" element={<ArtistPage />} />
-          <Route path="/library" element={<LibraryPage />} />
-          <Route path="/playlist" element={<PlaylistPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          {/* catch-all */}
-          <Route path="*" element={<NotFound />} />
-
-
-        </Routes>
-    </BrowserRouter>
-    </TooltipProvider>
-</QueryClientProvider>
-);
+function App() {
+  return (
+    <Router>
+      <div className="relative flex h-screen w-full overflow-hidden">
+        <LeftSidebar />
+        <div className="flex flex-1 flex-col">
+          <Header />
+          <main className="flex-1 overflow-y-auto p-6">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/playlist/:id" element={<PlaylistPage />} />
+              <Route path="/artist/:id" element={<ArtistPage />} />
+              <Route path="/library" element={<LibraryPage />} />
+            </Routes>
+          </main>
+        </div>
+        <MusicPlayerBar />
+      </div>
+    </Router>
+  );
+}
 
 export default App;
