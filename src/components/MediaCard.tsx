@@ -43,10 +43,12 @@ const MediaCard: React.FC<MediaCardProps> = ({
   const isArtist = type === 'artist';
 
   return (
-    <Link to={href} className="block group w-full outline-none" aria-label={`View details for ${title}`}>\n      <Card className="w-full bg-card hover:bg-muted focus-visible:bg-muted transition-colors duration-300 p-4 rounded-lg cursor-pointer border-none">\n        <div className="relative mb-4">\n          <AspectRatio ratio={1}>\n            <img
-              src={imageUrl || 'https://via.placeholder.com/150'}
-              alt={`Cover for ${title}`}
-              className={cn(
+    <Link to={href} className="block group w-full outline-none" aria-label={`View details for ${title}`}>
+      <Card className="w-full bg-card hover:bg-muted/50 focus-visible:bg-muted/50 transition-colors duration-300 p-4 rounded-lg cursor-pointer border-none">
+        <div className="relative mb-4">
+          <AspectRatio ratio={1}>
+            <img
+              src={imageUrl || 'https://via.placeholder.com/150'}\n              alt={`Cover for ${title}`}\n              className={cn(
                 "object-cover w-full h-full shadow-lg",
                 isArtist ? "rounded-full" : "rounded-md"
               )}
@@ -55,10 +57,12 @@ const MediaCard: React.FC<MediaCardProps> = ({
           <div
             className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out"
             onClick={handlePlayClick}
-          >\n            <PlayButtonIcon isPlaying={false} />
+          >
+            <PlayButtonIcon />
           </div>
         </div>
-        <CardContent className="p-0 space-y-1">\n          <p className="font-bold truncate text-foreground">{title}</p>
+        <CardContent className="p-0 space-y-1">
+          <p className="font-bold truncate text-card-foreground">{title}</p>
           <p className="text-sm text-muted-foreground truncate">{subtitle}</p>
         </CardContent>
       </Card>
