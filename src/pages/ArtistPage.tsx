@@ -15,31 +15,28 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 
 // Placeholder Data
 const artist = {
-  name: "Pikachu",
+  name: "Team Rocket",
   verified: true,
-  monthlyListeners: "25M",
-  imageUrl: "https://wallpapercave.com/wp/wp7411245.jpg", // Artist banner
+  monthlyListeners: "Over 9,000",
+  imageUrl: "https://static.wikia.nocookie.net/pokemon/images/3/3d/Team_Rocket_trio_OS_2.png", // Artist image for banner
 };
 
 const popularTracks = [
-  { id: '1', number: 1, title: "Thunder Shock", artist: "Pikachu", artistId: "pikachu", album: "Kanto Beats", albumId: "kanto-beats", duration: "3:33", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" },
-  { id: '2', number: 2, title: "Volt Tackle", artist: "Pikachu", artistId: "pikachu", album: "Sinnoh Sounds", albumId: "sinnoh-sounds", duration: "4:18", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" },
-  { id: '3', number: 3, title: "Agility", artist: "Pikachu", artistId: "pikachu", album: "Kanto Beats", albumId: "kanto-beats", duration: "4:08", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" },
-  { id: '4', number: 4, title: "Iron Tail", artist: "Pikachu", artistId: "pikachu", album: "Hoenn Harmonies", albumId: "hoenn-harmonies", duration: "3:26", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" },
-  { id: '5', number: 5, title: "Nuzzle", artist: "Pikachu", artistId: "pikachu", album: "Alola Albums", albumId: "alola-albums", duration: "3:16", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" },
+  { id: '1', number: 1, title: "Team Rocket's Rockin'", artist: "Team Rocket", artistId: "tr", album: "Prepare for Trouble", albumId: "tr-album1", duration: "2:22", imageUrl: "https://i.ytimg.com/vi/gzpDKgAlS2I/hqdefault.jpg" },
+  { id: '2', number: 2, title: "Double Trouble", artist: "Team Rocket", artistId: "tr", album: "Make it Double", albumId: "tr-album2", duration: "3:01", imageUrl: "https://i.scdn.co/image/ab67616d0000b273b4e9e4f5f5e5e5d5e5e5e5e5" },
+  { id: '3', number: 3, title: "We're Blasting Off Again!", artist: "Team Rocket", artistId: "tr", album: "Prepare for Trouble", albumId: "tr-album1", duration: "0:10", imageUrl: "https://i.ytimg.com/vi/gzpDKgAlS2I/hqdefault.jpg" },
+  { id: '4', number: 4, title: "Meowth's Song", artist: "Meowth", artistId: "tr", album: "Make it Double", albumId: "tr-album2", duration: "1:45", imageUrl: "https://i.scdn.co/image/ab67616d0000b273b4e9e4f5f5e5e5d5e5e5e5e5" },
+  { id: '5', number: 5, title: "The Boss's Daydream", artist: "Team Rocket", artistId: "tr", album: "Prepare for Trouble", albumId: "tr-album1", duration: "4:01", imageUrl: "https://i.ytimg.com/vi/gzpDKgAlS2I/hqdefault.jpg" },
 ];
 
 const albums = [
-  { href: "/playlist?id=kanto-beats", imageUrl: "https://cdn.shopify.com/s/files/1/0291/8189/5412/products/41P8249M2KL.jpg?v=1632128036", title: "Kanto Beats", subtitle: "Album • 1998" },
-  { href: "/playlist?id=johto-journeys", imageUrl: "https://m.media-amazon.com/images/I/71pB2HINsUL._SL1200_.jpg", title: "Johto Journeys", subtitle: "Album • 2000" },
-  { href: "/playlist?id=sinnoh-sounds", imageUrl: "https://i.ebayimg.com/images/g/9yIAAOSwx9NjHqK1/s-l1600.jpg", title: "Sinnoh Sounds", subtitle: "EP • 2007" },
+  { href: "/playlist?id=prepare-for-trouble", imageUrl: "https://i.ytimg.com/vi/gzpDKgAlS2I/hqdefault.jpg", title: "Prepare for Trouble", subtitle: "Album • 1999" },
+  { href: "/playlist?id=make-it-double", imageUrl: "https://i.scdn.co/image/ab67616d0000b273b4e9e4f5f5e5e5d5e5e5e5e5", title: "Make it Double", subtitle: "Album • 2001" },
 ];
 
 const relatedArtists = [
-  { href: "/artist?id=jigglypuff", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png", title: "Jigglypuff", subtitle: "Artist", type: 'artist' as 'artist' },
-  { href: "/artist?id=mewtwo", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png", title: "Mewtwo", subtitle: "Artist", type: 'artist' as 'artist' },
-  { href: "/artist?id=gengar", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png", title: "Gengar", subtitle: "Artist", type: 'artist' as 'artist' },
-  { href: "/artist?id=charizard", imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png", title: "Charizard", subtitle: "Artist", type: 'artist' as 'artist' },
+  { href: "/artist?id=giovanni", imageUrl: "https://archives.bulbagarden.net/media/upload/3/36/The_Birth_of_Mewtwo_Giovanni.png", title: "Giovanni", subtitle: "Artist", type: 'artist' as 'artist' },
+  { href: "/artist?id=butch-cassidy", imageUrl: "https://archives.bulbagarden.net/media/upload/thumb/f/f6/Butch_and_Cassidy.png/800px-Butch_and_Cassidy.png", title: "Butch & Cassidy", subtitle: "Artist", type: 'artist' as 'artist' },
 ];
 
 const ArtistPage = () => {
@@ -50,70 +47,63 @@ const ArtistPage = () => {
   };
 
   return (
-    <div className="flex h-screen bg-background text-foreground overflow-hidden">\n      <LeftSidebar />
-      <div className="flex-1 flex flex-col">\n        <ScrollArea className="flex-1">\n          <main style={{ paddingBottom: '120px' }}>
+    <div className="flex h-screen bg-background text-foreground overflow-hidden">
+      <LeftSidebar />
+      <div className="flex-1 flex flex-col">
+        <Header />
+        <ScrollArea className="flex-1">
+          <main style={{ paddingBottom: '120px' }}>
             {/* Artist Banner */}
             <section
-              className="relative flex flex-col justify-between h-96 bg-cover bg-center"\n            >
-              <div
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: `url(${artist.imageUrl})`}}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent z-10" />
-              <div className="relative z-20"><Header /></div>
-              
-              <div className="relative z-20 p-8 flex flex-col gap-4">\n                {artist.verified && (
-                  <div className="flex items-center gap-2 text-sm font-bold">\n                    <Verified className="h-6 w-6 text-blue-400 fill-current" />
+              className="relative flex items-end h-80 bg-cover bg-center p-8 bg-black"
+              style={{ backgroundImage: `linear-gradient(to top, hsl(var(--background)), transparent), url(${artist.imageUrl})` }}\n            >
+              <div className="flex flex-col gap-4">
+                {artist.verified && (
+                  <div className="flex items-center gap-2 text-sm font-bold">
+                    <Verified className="h-6 w-6 text-primary fill-current" />
                     Verified Artist
                   </div>
-                )}
-                <h1 className="text-7xl font-extrabold tracking-tighter">{artist.name}</h1>
+                )}\n                <h1 className="text-7xl font-extrabold tracking-tighter">{artist.name}</h1>
                 <p className="text-sm font-medium">{artist.monthlyListeners} monthly listeners</p>
               </div>
             </section>
 
             {/* Controls */}
-            <section className="px-8 py-6 flex items-center gap-6 bg-background">\n              <PlayButtonIcon isPlaying={false} onClick={handlePlay} size="large" />
-              <Button variant="outline" className="bg-transparent border-muted-foreground/50 hover:border-foreground text-foreground font-bold">\n                Follow
+            <section className="px-8 py-6 flex items-center gap-6 bg-gradient-to-b from-background/50 to-background">
+              <PlayButtonIcon isPlaying={false} onClick={handlePlay} size="large" />
+              <Button variant="outline" className="bg-transparent border-muted-foreground hover:border-foreground font-bold">
+                Follow
               </Button>
             </section>
 
             {/* Popular Tracks */}
-            <section className="px-8 py-4 bg-background">\n              <h2 className="text-2xl font-bold mb-4">Popular</h2>
-              <div className="flex flex-col">\n                {popularTracks.map((track) => (
+            <section className="px-8 py-4">
+              <h2 className="text-2xl font-bold mb-4">Popular</h2>
+              <div className="flex flex-col">
+                {popularTracks.map((track) => (
                   <SongRow key={track.id} track={track} />
                 ))}
               </div>
             </section>
 
             {/* Discography */}
-            <section className="px-8 py-4 bg-background">\n              <h2 className="text-2xl font-bold mb-4">Discography</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">\n                {albums.map((album) => (
+            <section className="px-8 py-4">
+              <h2 className="text-2xl font-bold mb-4">Discography</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                {albums.map((album) => (
                   <MediaCard
-                    key={album.title}
-                    href={album.href}
-                    imageUrl={album.imageUrl}
-                    title={album.title}
-                    subtitle={album.subtitle}
-                    type="album"
-                    onPlay={() => console.log(`Playing album: ${album.title}`)}
-                  />
+                    key={album.title}\n                    href={album.href}\n                    imageUrl={album.imageUrl}\n                    title={album.title}\n                    subtitle={album.subtitle}\n                    type="album"\n                    onPlay={() => console.log(`Playing album: ${album.title}`)}\n                  />
                 ))}
               </div>
             </section>
 
             {/* Fans Also Like */}
-            <section className="px-8 py-4 bg-background">\n              <h2 className="text-2xl font-bold mb-4">Trainers Also Like</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">\n                {relatedArtists.map((relArtist) => (
+            <section className="px-8 py-4">
+              <h2 className="text-2xl font-bold mb-4">Fans Also Like</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                {relatedArtists.map((relArtist) => (
                   <MediaCard
-                    key={relArtist.title}
-                    href={relArtist.href}
-                    imageUrl={relArtist.imageUrl}
-                    title={relArtist.title}
-                    subtitle={relArtist.subtitle}
-                    type={relArtist.type}
-                    onPlay={() => console.log(`Playing artist: ${relArtist.title}`)}
-                  />
+                    key={relArtist.title}\n                    href={relArtist.href}\n                    imageUrl={relArtist.imageUrl}\n                    title={relArtist.title}\n                    subtitle={relArtist.subtitle}\n                    type={relArtist.type}\n                    onPlay={() => console.log(`Playing artist: ${relArtist.title}`)}\n                  />
                 ))}
               </div>
             </section>
