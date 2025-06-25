@@ -27,14 +27,13 @@ const PlayButtonIcon: React.FC<PlayButtonIconProps> = ({
       onClick={onClick}
       className={cn(
         'rounded-full shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 active:scale-100',
-        'bg-blue-500 text-white hover:bg-blue-600',
-        'focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        'bg-primary text-primary-foreground hover:bg-primary/90',
+        'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
         sizeClasses,
         className
       )}
       {...props}
-    >
-      <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
+    >\n      <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
       {isPlaying ? (
         <Pause size={iconSize} fill="currentColor" />
       ) : (
