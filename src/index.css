@@ -4,63 +4,49 @@
 
 @layer base {
   :root {
-    /* Pokémon Theme: Light Mode */
-    --background: 210 40% 98%; /* Light Cool Grey */
-    --foreground: 220 25% 20%; /* Dark Slate Blue */
+    --background: 210 40% 98%; /* Light Gray - Off-white */
+    --foreground: 220 13% 23%; /* Dark Gray */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 220 25% 20%;
+    --card-foreground: 220 13% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 20%;
+    --popover-foreground: 220 13% 23%;
 
-    --primary: 208 65% 45%; /* Pokémon Blue */
+    --primary: 0 84.2% 60.2%; /* Vibrant Red */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 56.9%; /* Slightly lighter for better contrast */
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 48 100% 51%; /* Pokémon Yellow */
-    --accent-foreground: 220 25% 10%; /* Dark text for yellow bg */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 87% 51%; /* Pokéball Red */
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 48 96% 58%; /* Pokémon Yellow for focus */
+    --ring: 0 84.2% 60.2%;
 
     --radius: 0.75rem;
-
-    --font-sans: "Nunito", sans-serif;
-
-    /* Sidebar Variables (Light) */
-    --sidebar-background: 210 20% 94%;
-    --sidebar-foreground: 220 25% 20%;
-    --sidebar-primary: 208 65% 45%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 30% 88%;
-    --sidebar-accent-foreground: 220 25% 20%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-    --sidebar-ring: 48 96% 58%;
   }
 
   .dark {
-    /* Pokémon Theme: Dark Mode */
-    --background: 220 25% 10%; /* Dark Blue/Charcoal */
-    --foreground: 210 20% 98%;
+    --background: 222 28% 13%; /* Very Dark Blue/Gray */
+    --foreground: 215 20% 90%; /* Light Gray */
 
-    --card: 220 25% 15%; /* Slightly Lighter Dark Blue */
-    --card-foreground: 210 20% 98%;
+    --card: 220 13% 23%; /* Dark Gray */
+    --card-foreground: 215 20% 90%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 220 13% 23%;
+    --popover-foreground: 215 20% 90%;
 
-    --primary: 208 75% 60%; /* Brighter Pokémon Blue for Dark Mode */
-    --primary-foreground: 220 25% 10%;
+    --primary: 0 72.2% 50.6%; /* Slightly darker Red for dark mode */
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -68,25 +54,15 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 48 100% 51%; /* Pokémon Yellow */
-    --accent-foreground: 220 25% 10%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 80% 60%; /* Brighter Pokéball Red */
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 48 96% 58%; /* Consistent Yellow for focus */
-
-    /* Sidebar Variables (Dark) */
-    --sidebar-background: 220 25% 6%; /* Almost Black */
-    --sidebar-foreground: 210 20% 98%;
-    --sidebar-primary: 208 75% 60%;
-    --sidebar-primary-foreground: 220 25% 10%;
-    --sidebar-accent: 220 25% 15%;
-    --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 48 96% 58%;
+    --ring: 0 72.2% 50.6%;
   }
 }
 
@@ -94,8 +70,7 @@
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground font-sans; /* Apply new base font */
+    @apply bg-background text-foreground;
   }
 }
