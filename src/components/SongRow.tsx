@@ -43,11 +43,10 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
         >
           {/* Column 1: Track Number / Play Button */}
           <div className="flex items-center justify-center text-muted-foreground">
-            <span className={cn("group-hover:hidden", { "text-blue-400": isPlaying })}>
+            <span className={cn("group-hover:hidden", { "text-primary": isPlaying })}>
               {track.number}
             </span>
-            <button className="hidden group-hover:block" aria-label={`Play ${track.title}`}>
-              <Play className="h-5 w-5 fill-foreground text-foreground" />
+            <button className="hidden group-hover:block" aria-label={`Play ${track.title}`}>\n              <Play className="h-5 w-5 fill-foreground text-foreground" />
             </button>
           </div>
 
@@ -61,7 +60,7 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
               height={40}
             />
             <div className="flex-1 overflow-hidden">
-              <p className={cn("truncate font-medium", { "text-blue-400": isPlaying })}>
+              <p className={cn("truncate font-medium", { "text-primary": isPlaying })}>
                 {track.title}
               </p>
               <Link
@@ -103,7 +102,7 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
         </ContextMenuItem>
         <ContextMenuItem>
           <Heart className="mr-2 h-4 w-4" />
-          Save to Liked Songs
+          Add to Favorite Pokémon
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuSub>
@@ -112,9 +111,9 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
             Add to playlist
           </ContextMenuSubTrigger>
           <ContextMenuSubContent className="w-48">
-            <ContextMenuItem>My Playlist #1</ContextMenuItem>
-            <ContextMenuItem>Chill Vibes</ContextMenuItem>
-            <ContextMenuItem>Focus Time</ContextMenuItem>
+            <ContextMenuItem>Kanto Gyms</ContextMenuItem>
+            <ContextMenuItem>Elite Four</ContextMenuItem>
+            <ContextMenuItem>Victory Road</ContextMenuItem>
           </ContextMenuSubContent>
         </ContextMenuSub>
       </ContextMenuContent>
