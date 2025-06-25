@@ -17,17 +17,21 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="flex h-16 items-center justify-between px-6 bg-background/80 backdrop-blur-sm sticky top-0 z-20">\n      <div className="flex items-center gap-2">\n        <Button variant="ghost" size="icon" className="rounded-full bg-black/30" onClick={() => navigate(-1)}>\n          <ChevronLeft className="h-5 w-5" />
+    <header className="flex h-16 items-center justify-between px-6 bg-background/80 backdrop-blur-sm">
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => navigate(-1)}>\n          <ChevronLeft className="h-5 w-5" />
           <span className="sr-only">Go back</span>
         </Button>
-        <Button variant="ghost" size="icon" className="rounded-full bg-black/30" onClick={() => navigate(1)}>\n          <ChevronRight className="h-5 w-5" />
+        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => navigate(1)}>\n          <ChevronRight className="h-5 w-5" />
           <span className="sr-only">Go forward</span>
         </Button>
       </div>
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="relative h-10 w-10 rounded-full">\n              <Avatar className="h-9 w-9">\n                <AvatarImage src="https://pbs.twimg.com/profile_images/1377313061033238531/S6gnp_CM_400x400.jpg" alt="Trainer Ash" />
+            <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+              <Avatar className="h-9 w-9">
+                <AvatarImage src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Ash Ketchum" />
                 <AvatarFallback>
                   <User className="h-5 w-5" />
                 </AvatarFallback>
@@ -35,8 +39,11 @@ const Header: React.FC = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="end" forceMount>
-            <DropdownMenuLabel className="font-normal">\n              <div className="flex flex-col space-y-1">\n                <p className="text-sm font-medium leading-none">Trainer Ash</p>
-                <p className="text-xs leading-none text-muted-foreground">\n                  ash.ketchum@pokemon.net
+            <DropdownMenuLabel className="font-normal">
+              <div className="flex flex-col space-y-1">
+                <p className="text-sm font-medium leading-none">Ash Ketchum</p>
+                <p className="text-xs leading-none text-muted-foreground">
+                  ash.k@pallet.town
                 </p>
               </div>
             </DropdownMenuLabel>
