@@ -1,72 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import PlayButtonIcon from '@/components/PlayButtonIcon';
-import { cn } from '@/lib/utils';
+import PlayButtonIcon from './PlayButtonIcon';
 
 interface MediaCardProps {
-  /** The URL the card should navigate to on click. */
-  href: string;
-  /** The URL for the cover art image. */
+  id: string;
   imageUrl: string;
-  /** The main title, e.g., album name or artist name. */
   title: string;
-  /** The subtitle, e.g., artist name or item type. */
   subtitle: string;
-  /** The type of media, used for styling variations. */
-  type: 'album' | 'artist' | 'playlist';
-  /** Callback function when the play button is clicked. */
-  onPlay: () => void;
 }
 
-const MediaCard: React.FC<MediaCardProps> = ({
-  href,
-  imageUrl,
-  title,
-  subtitle,
-  type,
-  onPlay,
-}) => {
-  console.log('MediaCard loaded for:', title);
-
-  /**
-   * Handles the play button click.
-   * Prevents the Link navigation from firing when the button is clicked.
-   */
-  const handlePlayClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent navigating to `href`
-    e.stopPropagation(); // Stop the event from bubbling up
-    onPlay();
-  };
-
-  const isArtist = type === 'artist';
-
+const MediaCard = ({ id, imageUrl, title, subtitle }: MediaCardProps) => {
   return (
-    <Link to={href} className="block group w-full outline-none" aria-label={`View details for ${title}`}>
-      <Card className="w-full bg-card hover:bg-muted/50 focus-visible:bg-muted/50 transition-colors duration-300 p-4 rounded-lg cursor-pointer border-none">
-        <div className="relative mb-4">
-          <AspectRatio ratio={1}>
-            <img
-              src={imageUrl || 'https://via.placeholder.com/150'}\n              alt={`Cover for ${title}`}\n              className={cn(
-                "object-cover w-full h-full shadow-lg",
-                isArtist ? "rounded-full" : "rounded-md"
-              )}
-            />
+    <Card className="group relative w-full overflow-hidden border-none shadow-none bg-transparent hover:bg-muted/50 transition-colors p-4 rounded-lg">
+      <CardContent className="p-0 flex flex-col gap-4">
+        <div className="relative">
+          <AspectRatio ratio={1 / 1} className="bg-muted rounded-md">
+            <img src={imageUrl} alt={title} className="rounded-md object-cover w-full h-full" />
           </AspectRatio>
-          <div
-            className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out"
-            onClick={handlePlayClick}
-          >
+          <div className="absolute bottom-2 right-2">
             <PlayButtonIcon />
           </div>
         </div>
-        <CardContent className="p-0 space-y-1">
-          <p className="font-bold truncate text-card-foreground">{title}</p>
+        <div className="flex flex-col">
+          <h3 className="font-semibold truncate">{title}</h3>
           <p className="text-sm text-muted-foreground truncate">{subtitle}</p>
-        </CardContent>
-      </Card>
-    </Link>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
