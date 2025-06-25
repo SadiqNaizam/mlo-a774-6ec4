@@ -1,5 +1,3 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -10,41 +8,30 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-const Header: React.FC = () => {
-  console.log('Header loaded');
-  const navigate = useNavigate();
-
+const Header = () => {
   return (
-    <header className="flex h-16 items-center justify-between px-6 bg-background/80 backdrop-blur-sm">
+    <header className="flex h-16 items-center justify-between px-6 border-b shrink-0">
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => navigate(-1)}>\n          <ChevronLeft className="h-5 w-5" />
-          <span className="sr-only">Go back</span>
+        <Button variant="outline" size="icon" className="h-8 w-8 rounded-full">
+          <ChevronLeft className="h-4 w-4" />
         </Button>
-        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => navigate(1)}>\n          <ChevronRight className="h-5 w-5" />
-          <span className="sr-only">Go forward</span>
+        <Button variant="outline" size="icon" className="h-8 w-8 rounded-full">
+          <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-              <Avatar className="h-9 w-9">
-                <AvatarImage src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Ash Ketchum" />
-                <AvatarFallback>
-                  <User className="h-5 w-5" />
-                </AvatarFallback>
-              </Avatar>
+              <User className="h-5 w-5" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="end" forceMount>
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">Ash Ketchum</p>
-                <p className="text-xs leading-none text-muted-foreground">
-                  ash.k@pallet.town
-                </p>
+                <p className="text-sm font-medium leading-none">Trainer Ash</p>
+                <p className="text-xs leading-none text-muted-foreground">ash@ketchum.com</p>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
