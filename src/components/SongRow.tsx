@@ -40,11 +40,9 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
             { "bg-muted/50": isPlaying }
           )}
           aria-label={`Play ${track.title} by ${track.artist}`}
-        >
-          {/* Column 1: Track Number / Play Button */}
+        >\n          {/* Column 1: Track Number / Play Button */}
           <div className="flex items-center justify-center text-muted-foreground">
-            <span className={cn("group-hover:hidden", { "text-primary": isPlaying })}>
-              {track.number}
+            <span className={cn("group-hover:hidden", { "text-primary": isPlaying })}>\n              {track.number}
             </span>
             <button className="hidden group-hover:block" aria-label={`Play ${track.title}`}>\n              <Play className="h-5 w-5 fill-foreground text-foreground" />
             </button>
@@ -53,21 +51,14 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
           {/* Column 2: Title and Artist */}
           <div className="flex items-center gap-3 overflow-hidden">
             <img
-              src={track.imageUrl || 'https://via.placeholder.com/40'}
-              alt={track.album}
-              className="h-10 w-10 rounded-sm"
-              width={40}
-              height={40}
-            />
+              src={track.imageUrl || 'https://via.placeholder.com/40'}\n              alt={track.album}\n              className="h-10 w-10 rounded-sm"\n              width={40}\n              height={40}\n            />
             <div className="flex-1 overflow-hidden">
-              <p className={cn("truncate font-medium", { "text-primary": isPlaying })}>
-                {track.title}
+              <p className={cn("truncate font-medium", { "text-primary": isPlaying })}>\n                {track.title}
               </p>
               <Link
                 to={`/artist?id=${track.artistId}`} // Using query param as no /artist/:id route exists
                 className="truncate text-sm text-muted-foreground hover:underline"
-                onClick={(e) => e.stopPropagation()}
-              >
+                onClick={(e) => e.stopPropagation()}\n              >
                 {track.artist}
               </Link>
             </div>
@@ -78,8 +69,7 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
             <Link
               to={`/playlist?id=${track.albumId}`} // Assuming albums are treated like playlists
               className="truncate text-sm text-muted-foreground hover:underline"
-              onClick={(e) => e.stopPropagation()}
-            >
+              onClick={(e) => e.stopPropagation()}\n            >
               {track.album}
             </Link>
           </div>
@@ -102,7 +92,7 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
         </ContextMenuItem>
         <ContextMenuItem>
           <Heart className="mr-2 h-4 w-4" />
-          Add to Favorite Pokémon
+          Save to Liked Songs
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuSub>
@@ -111,9 +101,9 @@ const SongRow: React.FC<SongRowProps> = ({ track, isPlaying = false }) => {
             Add to playlist
           </ContextMenuSubTrigger>
           <ContextMenuSubContent className="w-48">
-            <ContextMenuItem>Kanto Gyms</ContextMenuItem>
-            <ContextMenuItem>Elite Four</ContextMenuItem>
-            <ContextMenuItem>Victory Road</ContextMenuItem>
+            <ContextMenuItem>Pallet Town Radio</ContextMenuItem>
+            <ContextMenuItem>Victory Road Mix</ContextMenuItem>
+            <ContextMenuItem>Lofi Lavender Town</ContextMenuItem>
           </ContextMenuSubContent>
         </ContextMenuSub>
       </ContextMenuContent>
